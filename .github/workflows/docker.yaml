@@ -16,4 +16,7 @@ jobs:
     - name: docker build
       run: |
         docker build -t kumar .
+    - name: docker push
+      run: |
+        docker push dk6304273089/dheeraj
 
