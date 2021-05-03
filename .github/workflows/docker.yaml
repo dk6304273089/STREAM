@@ -17,3 +17,10 @@ jobs:
       run: |
         docker build -t kumar .
 
+    - name: Deploy to Heroku
+      env:
+        HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
+        HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
+      run: |
+         heroku container:login
+
