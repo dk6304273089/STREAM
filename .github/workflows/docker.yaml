@@ -17,6 +17,3 @@ jobs:
       run: |
         docker build -t kumar .
 
-    - name: docker push
-      run: |
-        docker run -p 8501:8051 kumar
