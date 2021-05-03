@@ -1,4 +1,4 @@
-FROM python 3.7
+FROM python:3.7
 COPY . /usr/app/
 EXPOSE 8501
 WORKDIR /usr/app/
