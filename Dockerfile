@@ -3,4 +3,4 @@ COPY . /usr/app/
 EXPOSE 8501
 WORKDIR /usr/app/
 RUN pip install -r requirements.txt
-CMD docker run -p 8501:8501 streamlit run app.py
+CMD streamlit run app.py
