@@ -1,4 +1,17 @@
+#build:
+ # docker:
+  #  web: Dockerfile
+version: '3'
 
-build:
-  docker:
-    web: Dockerfile
+services:
+    app:
+        image: streamlit-docker
+        build:
+            dockerfile: ./Dockerfile
+            context: .
+        environment:
+            - PORT=${PORT}
+        ports:
+            - ${PORT}:${PORT}
+        #volumes:
+            #- ./app:/usr/app//
