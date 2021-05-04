@@ -19,7 +19,7 @@ jobs:
         HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
       run: |
          heroku container:login
-    - name: pushing
+    - name: pushing to the
       run: |
          heroku container:push web --app uio1
     - name: finally done
