@@ -12,11 +12,12 @@ jobs:
     - name: Login to Heroku Container registry
     env:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: heroku container:login
   - name: Build and push
     env:
-    HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-    run: heroku container:push --app dhr3
+      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: heroku container:push --app docker-dem
   - name: Release
     env:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-    run: heroku container:release --app dhr3
+      run: heroku container:release --app docker-dem
