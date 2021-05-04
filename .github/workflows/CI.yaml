@@ -1,22 +1,21 @@
-name: Build Docker image and deploy to Herok
-on:
+name: Push Container to Heroku
 
-  push:
-    branches:
-    - main
+on: [push]
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - name: Login to Heroku Container registry
-    env:
-      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: |
-        heroku container:login
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: heroku container:login
     - name: Build and push
-      run: |
-        heroku container:push --app docker-dem
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: heroku container:push --app docker-dem
     - name: Release
-      run: |
-        heroku container:release --app docker-dem
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: heroku container:release --app docker-dem
