@@ -16,8 +16,8 @@ jobs:
   - name: Build and push
     env:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-    run: heroku container:push -a textrank-summarizer web
+    run: heroku container:push --app dhr3
   - name: Release
     env:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-    run: heroku container:release --app textrank-summarizer web
+    run: heroku container:release --app dhr3
