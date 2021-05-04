@@ -3,4 +3,4 @@ COPY . /usr/app/
 EXPOSE 8501
 WORKDIR /usr/app/
 RUN pip install -r requirements.txt
-CMD ['streamlit run app.py','gunicorn --bind 127.0.0.1:$8501 wsgi']
+CMD streamlit run app.py
