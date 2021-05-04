@@ -3,4 +3,3 @@ COPY . /usr/app/
 EXPOSE 8501
 WORKDIR /usr/app/
 RUN pip install -r requirements.txt
-CMD ['sh setup.sh','streamlit run app.py']
